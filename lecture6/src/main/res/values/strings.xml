@@ -6,4 +6,6 @@
     <string name="title_activity_list_activity_example">ListActivityExample</string>
     <string name="title_activity_standard_list">StandardListActivity</string>
     <string name="title_activity_custom_list_view">CustomListViewActivity</string>
+    <string name="title_activity_spinner">SpinnerActivity</string>
+    <string name="title_activity_countries">CountriesActivity</string>
 </resources>

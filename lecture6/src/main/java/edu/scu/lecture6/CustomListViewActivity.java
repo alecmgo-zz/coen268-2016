@@ -16,11 +16,12 @@ public class CustomListViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_list_view);
 
-        ListView listView = (ListView) findViewById(R.id.custom_list_view);
         List<Person> people = new ArrayList<>();
         people.add(new Person("Clooney", "clooney.jpg"));
         people.add(new Person("Rickman", "rickman.jpg"));
         people.add(new Person("Trump", "trump.jpg"));
+
+        ListView listView = (ListView) findViewById(R.id.custom_list_view);
         listView.setAdapter(new CustomAdapter(this, R.layout.custom_row, people));
     }
 }
