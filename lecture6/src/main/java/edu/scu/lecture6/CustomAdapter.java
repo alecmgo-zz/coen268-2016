@@ -17,29 +17,52 @@ public class CustomAdapter extends ArrayAdapter<Person> {
 
     private final List<Person> people;
 
+    static class ViewHolder {
+        TextView textView;
+        ImageView imageView;
+    }
+
     public CustomAdapter(Context context, int resource, List<Person> people) {
         super(context, resource, people);
         this.people = people;
+    }
+
+    // getDropDownView returns the view for the dropdown. We use the same view
+    // between getView and getDropDownView.
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        return getView(position, convertView, parent);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Person person = people.get(position);
 
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService
-                (Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.custom_row, null);
+        View row;
+        ViewHolder holder;
+
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService
+                    (Context.LAYOUT_INFLATER_SERVICE);
+            row = inflater.inflate(R.layout.custom_row, null);
+
+            holder = new ViewHolder();
+            holder.imageView = (ImageView) row.findViewById(R.id.rowImage);
+            holder.textView = (TextView) row.findViewById(R.id.rowText);
+            row.setTag(holder);
+        } else {
+            row = convertView;
+            holder = (ViewHolder) row.getTag();
+        }
 
         // Set the text
-        TextView textView = (TextView) row.findViewById(R.id.rowText);
-        textView.setText(person.getName());
+        holder.textView.setText(person.getName());
 
         // Set the image
         try {
-            ImageView imageView = (ImageView) row.findViewById(R.id.rowImage);
             InputStream inputStream = getContext().getAssets().open(person.getFilename());
             Drawable drawable = Drawable.createFromStream(inputStream, null);
-            imageView.setImageDrawable(drawable);
+            holder.imageView.setImageDrawable(drawable);
         } catch (IOException e) {
             e.printStackTrace();
         }

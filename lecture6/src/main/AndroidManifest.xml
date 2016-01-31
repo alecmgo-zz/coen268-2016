@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.scu.lecture6" >
+    package="edu.scu.lecture6">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".ListActivityExample"
-            android:label="@string/title_activity_list_activity_example" >
-        </activity>
+            android:label="@string/title_activity_list_activity_example" />
         <activity
             android:name=".StandardListActivity"
-            android:label="@string/title_activity_standard_list" >
-        </activity>
+            android:label="@string/title_activity_standard_list" />
         <activity
             android:name=".CustomListViewActivity"
-            android:label="@string/title_activity_custom_list_view" >
-        </activity>
+            android:label="@string/title_activity_custom_list_view" />
+        <activity
+            android:name=".SpinnerActivity"
+            android:label="@string/title_activity_spinner"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CountriesActivity"
+            android:label="@string/title_activity_countries"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
