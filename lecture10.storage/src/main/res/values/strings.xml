@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lecture10.storage</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_photo">PhotoActivity</string>
+    <string name="title_activity_sqlite">SqliteActivity</string>
+    <string name="title_activity_firebase">FirebaseActivity</string>
+</resources>
