@@ -6,4 +6,5 @@
 
     <string name="ninjas">Ninjas</string>
     <string name="pirates">Pirates</string>
+    <string name="title_activity_programmatic_add_view">ProgrammaticAddViewActivity</string>
 </resources>

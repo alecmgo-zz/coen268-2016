@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">lecture18</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_audio_example">AudioExampleActivity</string>
+    <string name="title_activity_audio_record_test">AudioRecordTest</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_tts">TtsActivity</string>
+</resources>
